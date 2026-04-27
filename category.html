@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="LUMINOS Floor Tiles — Browse premium porcelain, marble-look, and ceramic floor tile collections in multiple sizes and finishes." />
+  <title>Floor Tiles | LUMINOS Premium Stone & Tile</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Sidebar Filters */
+    .sidebar-filter { background: var(--white); padding: 32px; box-shadow: var(--shadow-xs); }
+    .sidebar-filter-title { font-family: var(--font-sans); font-size: 0.62rem; font-weight: 800; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--beige); }
+    .filter-check-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+    .filter-check { display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.82rem; color: var(--charcoal); }
+    .filter-check input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--gold); cursor: pointer; }
+    .color-filter-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+    .color-dot { width: 28px; height: 28px; border-radius: 50%; cursor: pointer; border: 2px solid transparent; transition: border-color 0.2s; }
+    .color-dot:hover, .color-dot.active { border-color: var(--gold); }
+    .price-range { display: flex; gap: 12px; align-items: center; }
+    .price-input { width: 80px; border: 1px solid var(--beige); padding: 8px 10px; font-size: 0.78rem; color: var(--charcoal); outline: none; }
+    .price-input:focus { border-color: var(--gold); }
+  </style>
+</head>
+<body>
+
+<div id="preloader">
+  <div class="preloader-logo">LUMIN<span>OS</span></div>
+  <div class="preloader-bar-wrap"><div class="preloader-bar"></div></div>
+  <div class="preloader-tagline">Where Architecture Meets Art</div>
+</div>
+
+<nav id="main-nav" class="nav-solid" style="background:var(--off-white);box-shadow:0 1px 0 rgba(0,0,0,0.06);">
+  <div class="nav-container">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-name" style="color:var(--charcoal);">LUMIN<span>OS</span></span>
+      <span class="nav-brand-sub">Premium Stone & Tile</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link" style="color:var(--charcoal);">Home</a></li>
+      <li><a href="about.html" class="nav-link" style="color:var(--charcoal);">About</a></li>
+      <li class="nav-item">
+        <a href="products.html" class="nav-link active" style="color:var(--charcoal);">Collections ▾</a>
+        <div class="nav-dropdown">
+          <a href="category.html">Floor Tiles</a>
+          <a href="category.html">Wall Tiles</a>
+          <a href="category.html">Bathroom</a>
+          <a href="category.html">Outdoor</a>
+          <a href="category.html">Marble Look</a>
+        </div>
+      </li>
+      <li><a href="projects.html" class="nav-link" style="color:var(--charcoal);">Projects</a></li>
+      <li><a href="gallery.html" class="nav-link" style="color:var(--charcoal);">Gallery</a></li>
+      <li><a href="blog.html" class="nav-link" style="color:var(--charcoal);">Blog</a></li>
+      <li><a href="contact.html" class="nav-link" style="color:var(--charcoal);">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="contact.html" class="btn-nav-cta">Get a Quote</a>
+      <div class="nav-hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</nav>
+<div class="nav-mobile-overlay"></div>
+<div class="nav-mobile">
+  <button class="nav-mobile-close"><i class="fa fa-times"></i></button>
+  <div style="margin-bottom:16px;"><span style="font-family:var(--font-display);font-size:1.5rem;color:#fff;">LUMIN<span style="color:var(--gold);">OS</span></span></div>
+  <a href="index.html" class="nav-mobile-link">Home</a>
+  <a href="about.html" class="nav-mobile-link">About</a>
+  <a href="products.html" class="nav-mobile-link">Collections</a>
+  <a href="projects.html" class="nav-mobile-link">Projects</a>
+  <a href="gallery.html" class="nav-mobile-link">Gallery</a>
+  <a href="contact.html" class="nav-mobile-link">Contact</a>
+</div>
+
+<!-- PAGE HERO — slim -->
+<section style="background:var(--charcoal);padding:160px 0 60px;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;opacity:0.12;">
+    <img src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=1200&q=70" alt="" style="width:100%;height:100%;object-fit:cover;" />
+  </div>
+  <div class="container-luxury" style="position:relative;z-index:2;">
+    <div class="section-eyebrow" style="color:var(--gold-light);">Category</div>
+    <h1 style="font-family:var(--font-display);font-size:clamp(2rem,4vw,3.5rem);color:white;font-weight:500;margin-bottom:14px;">Floor <em style="font-style:italic;color:var(--gold-light);">Tiles</em></h1>
+    <div class="breadcrumb-luxury">
+      <a href="index.html">Home</a>
+      <span class="breadcrumb-sep">/</span>
+      <a href="products.html">Collections</a>
+      <span class="breadcrumb-sep">/</span>
+      <span>Floor Tiles</span>
+    </div>
+  </div>
+</section>
+
+<!-- Category Switcher Tabs -->
+<div style="background:var(--white);border-bottom:1px solid var(--beige);overflow-x:auto;">
+  <div class="container-luxury">
+    <div style="display:flex;gap:0;">
+      <a href="category.html" style="font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:18px 28px;color:var(--white);background:var(--gold);display:block;white-space:nowrap;border-bottom:2px solid var(--gold);">Floor Tiles</a>
+      <a href="category.html" style="font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:18px 28px;color:var(--mid-grey);display:block;white-space:nowrap;border-bottom:2px solid transparent;transition:all 0.2s;">Wall Tiles</a>
+      <a href="category.html" style="font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:18px 28px;color:var(--mid-grey);display:block;white-space:nowrap;border-bottom:2px solid transparent;transition:all 0.2s;">Bathroom</a>
+      <a href="category.html" style="font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:18px 28px;color:var(--mid-grey);display:block;white-space:nowrap;border-bottom:2px solid transparent;transition:all 0.2s;">Outdoor</a>
+      <a href="category.html" style="font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:18px 28px;color:var(--mid-grey);display:block;white-space:nowrap;border-bottom:2px solid transparent;transition:all 0.2s;">Marble Look</a>
+      <a href="category.html" style="font-size:0.68rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;padding:18px 28px;color:var(--mid-grey);display:block;white-space:nowrap;border-bottom:2px solid transparent;transition:all 0.2s;">Ceramic Art</a>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTENT: Sidebar + Products -->
+<section class="section bg-off-white">
+  <div class="container-luxury">
+    <div class="row g-5">
+
+      <!-- Sidebar -->
+      <div class="col-lg-3 d-none d-lg-block">
+        <div class="sticky-top-offset">
+
+          <!-- Filter: Material -->
+          <div class="sidebar-filter mb-4">
+            <div class="sidebar-filter-title">Material</div>
+            <div class="filter-check-group">
+              <label class="filter-check"><input type="checkbox" checked /> Porcelain <span style="margin-left:auto;color:var(--mid-grey);font-size:0.7rem;">(45)</span></label>
+              <label class="filter-check"><input type="checkbox" /> Natural Stone <span style="margin-left:auto;color:var(--mid-grey);font-size:0.7rem;">(28)</span></label>
+              <label class="filter-check"><input type="checkbox" /> Ceramic <span style="margin-left:auto;color:var(--mid-grey);font-size:0.7rem;">(32)</span></label>
+              <label class="filter-check"><input type="checkbox" /> Marble <span style="margin-left:auto;color:var(--mid-grey);font-size:0.7rem;">(18)</span></label>
+            </div>
+
+            <!-- Filter: Size -->
+            <div class="sidebar-filter-title">Tile Size</div>
+            <div class="filter-check-group">
+              <label class="filter-check"><input type="checkbox" /> 300×300mm</label>
+              <label class="filter-check"><input type="checkbox" checked /> 600×600mm</label>
+              <label class="filter-check"><input type="checkbox" /> 800×800mm</label>
+              <label class="filter-check"><input type="checkbox" /> 600×1200mm</label>
+              <label class="filter-check"><input type="checkbox" /> 800×1600mm</label>
+            </div>
+
+            <!-- Filter: Finish -->
+            <div class="sidebar-filter-title">Finish</div>
+            <div class="filter-check-group">
+              <label class="filter-check"><input type="checkbox" checked /> Matte</label>
+              <label class="filter-check"><input type="checkbox" checked /> Polished</label>
+              <label class="filter-check"><input type="checkbox" /> Honed</label>
+              <label class="filter-check"><input type="checkbox" /> Textured</label>
+              <label class="filter-check"><input type="checkbox" /> Lappato</label>
+            </div>
+
+            <!-- Filter: Color -->
+            <div class="sidebar-filter-title">Colour Family</div>
+            <div class="color-filter-row">
+              <div class="color-dot active" style="background:#F5F0EB;" title="White"></div>
+              <div class="color-dot" style="background:#C8C0B0;" title="Grey"></div>
+              <div class="color-dot" style="background:#E8D4A0;" title="Beige"></div>
+              <div class="color-dot" style="background:#3C3830;" title="Charcoal"></div>
+              <div class="color-dot" style="background:#5A4A3A;" title="Brown"></div>
+              <div class="color-dot" style="background:#B8D4C0;" title="Green"></div>
+              <div class="color-dot" style="background:#C4973C;" title="Gold"></div>
+            </div>
+
+            <!-- Filter: Price -->
+            <div class="sidebar-filter-title">Price Range (₹/sqft)</div>
+            <div class="price-range mb-4">
+              <input type="number" class="price-input" placeholder="Min" value="80" />
+              <span style="color:var(--mid-grey);">—</span>
+              <input type="number" class="price-input" placeholder="Max" value="500" />
+            </div>
+
+            <button class="btn-luxury btn-gold" style="width:100%;justify-content:center;">Apply Filters</button>
+          </div>
+
+          <!-- Need Help Box -->
+          <div style="background:var(--charcoal);padding:28px;text-align:center;">
+            <div style="color:var(--gold);font-size:1.5rem;margin-bottom:12px;"><i class="fa fa-headset"></i></div>
+            <div style="font-family:var(--font-display);font-size:1.1rem;color:white;margin-bottom:8px;">Need Help Choosing?</div>
+            <p style="font-size:0.75rem;color:rgba(255,255,255,0.5);margin-bottom:18px;">Our design experts are here to assist.</p>
+            <a href="contact.html" class="btn-luxury btn-gold" style="width:100%;justify-content:center;font-size:0.62rem;">Talk to an Expert</a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Products -->
+      <div class="col-lg-9">
+
+        <!-- Top Bar -->
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:12px;">
+          <div style="font-size:0.78rem;color:var(--mid-grey);">Showing <strong style="color:var(--charcoal);">120</strong> results</div>
+          <div style="display:flex;align-items:center;gap:16px;">
+            <div class="filter-sort">
+              Sort:
+              <select class="filter-select">
+                <option>Featured</option>
+                <option>Newest</option>
+                <option>Price: Low to High</option>
+                <option>Price: High to Low</option>
+                <option>Name A–Z</option>
+              </select>
+            </div>
+            <div style="display:flex;gap:6px;">
+              <button style="width:34px;height:34px;border:1px solid var(--beige);background:var(--gold);color:white;display:flex;align-items:center;justify-content:center;" title="Grid view">
+                <i class="fa fa-th-large" style="font-size:0.7rem;"></i>
+              </button>
+              <button style="width:34px;height:34px;border:1px solid var(--beige);background:transparent;color:var(--mid-grey);display:flex;align-items:center;justify-content:center;" title="List view">
+                <i class="fa fa-list" style="font-size:0.7rem;"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Active Filters -->
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px;">
+          <span style="font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--mid-grey);">Active Filters:</span>
+          <span style="background:var(--cream);border:1px solid var(--beige);font-size:0.65rem;font-weight:600;color:var(--charcoal);padding:4px 12px;display:flex;align-items:center;gap:6px;">Porcelain <i class="fa fa-times" style="cursor:pointer;color:var(--mid-grey);"></i></span>
+          <span style="background:var(--cream);border:1px solid var(--beige);font-size:0.65rem;font-weight:600;color:var(--charcoal);padding:4px 12px;display:flex;align-items:center;gap:6px;">600×600mm <i class="fa fa-times" style="cursor:pointer;color:var(--mid-grey);"></i></span>
+          <span style="color:var(--gold);font-size:0.65rem;font-weight:700;cursor:pointer;padding:4px 0;">Clear all</span>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" style="grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));">
+
+          <div class="product-card" data-reveal="fade-up" data-delay="100">
+            <div class="product-card-img-wrap">
+              <span class="product-badge badge-new">New</span>
+              <img src="https://images.unsplash.com/photo-1615971677499-5467cbab01c0?w=500&q=75" alt="Bianco Carrara" class="product-card-img" loading="lazy" />
+              <div class="product-card-actions">
+                <a href="product-detail.html" class="product-action-btn"><i class="fa fa-eye"></i></a>
+                <a href="contact.html" class="product-action-btn"><i class="fa fa-envelope"></i></a>
+                <a href="#" class="product-action-btn"><i class="fa fa-heart"></i></a>
+              </div>
+            </div>
+            <div class="product-card-info">
+              <div class="product-category-tag">Porcelain · Floor</div>
+              <div class="product-card-name">Bianco Carrara</div>
+              <div class="product-card-desc">Italian white marble look. Anti-slip finish.</div>
+              <div class="product-card-meta">
+                <div class="product-sizes"><span class="size-chip">600×600</span><span class="size-chip">800×800</span></div>
+                <a href="product-detail.html" class="product-card-link">Details <span class="arrow-right"></span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-reveal="fade-up" data-delay="200">
+            <div class="product-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1600566752355-35792bedcfea?w=500&q=75" alt="Graphite Lava" class="product-card-img" loading="lazy" />
+              <div class="product-card-actions">
+                <a href="product-detail.html" class="product-action-btn"><i class="fa fa-eye"></i></a>
+                <a href="contact.html" class="product-action-btn"><i class="fa fa-envelope"></i></a>
+                <a href="#" class="product-action-btn"><i class="fa fa-heart"></i></a>
+              </div>
+            </div>
+            <div class="product-card-info">
+              <div class="product-category-tag">Porcelain · Floor</div>
+              <div class="product-card-name">Graphite Lava</div>
+              <div class="product-card-desc">Industrial-chic dark slate. Textured matte finish.</div>
+              <div class="product-card-meta">
+                <div class="product-sizes"><span class="size-chip">600×1200</span></div>
+                <a href="product-detail.html" class="product-card-link">Details <span class="arrow-right"></span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-reveal="fade-up" data-delay="300">
+            <div class="product-card-img-wrap">
+              <span class="product-badge badge-featured">Featured</span>
+              <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=75" alt="Statuario Gold" class="product-card-img" loading="lazy" />
+              <div class="product-card-actions">
+                <a href="product-detail.html" class="product-action-btn"><i class="fa fa-eye"></i></a>
+                <a href="contact.html" class="product-action-btn"><i class="fa fa-envelope"></i></a>
+                <a href="#" class="product-action-btn"><i class="fa fa-heart"></i></a>
+              </div>
+            </div>
+            <div class="product-card-info">
+              <div class="product-category-tag">Marble Look · Floor</div>
+              <div class="product-card-name">Statuario Gold</div>
+              <div class="product-card-desc">White with gold veining. Bookmatched large format.</div>
+              <div class="product-card-meta">
+                <div class="product-sizes"><span class="size-chip">800×1600</span></div>
+                <a href="product-detail.html" class="product-card-link">Details <span class="arrow-right"></span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-reveal="fade-up" data-delay="100">
+            <div class="product-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=500&q=75" alt="Sahara Sand" class="product-card-img" loading="lazy" />
+              <div class="product-card-actions">
+                <a href="product-detail.html" class="product-action-btn"><i class="fa fa-eye"></i></a>
+                <a href="contact.html" class="product-action-btn"><i class="fa fa-envelope"></i></a>
+                <a href="#" class="product-action-btn"><i class="fa fa-heart"></i></a>
+              </div>
+            </div>
+            <div class="product-card-info">
+              <div class="product-category-tag">Ceramic · Floor</div>
+              <div class="product-card-name">Sahara Sand</div>
+              <div class="product-card-desc">Warm desert tones, naturally textured surface.</div>
+              <div class="product-card-meta">
+                <div class="product-sizes"><span class="size-chip">600×600</span><span class="size-chip">800×800</span></div>
+                <a href="product-detail.html" class="product-card-link">Details <span class="arrow-right"></span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-reveal="fade-up" data-delay="200">
+            <div class="product-card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1585117260967-2c2a4e5f2e7c?w=500&q=75" alt="Nordic Ash" class="product-card-img" loading="lazy" />
+              <div class="product-card-actions">
+                <a href="product-detail.html" class="product-action-btn"><i class="fa fa-eye"></i></a>
+                <a href="contact.html" class="product-action-btn"><i class="fa fa-envelope"></i></a>
+                <a href="#" class="product-action-btn"><i class="fa fa-heart"></i></a>
+              </div>
+            </div>
+            <div class="product-card-info">
+              <div class="product-category-tag">Porcelain · Floor</div>
+              <div class="product-card-name">Nordic Ash</div>
+              <div class="product-card-desc">Cool Scandinavian grey with subtle wood grain effect.</div>
+              <div class="product-card-meta">
+                <div class="product-sizes"><span class="size-chip">200×1200</span></div>
+                <a href="product-detail.html" class="product-card-link">Details <span class="arrow-right"></span></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-card" data-reveal="fade-up" data-delay="300">
+            <div class="product-card-img-wrap">
+              <span class="product-badge badge-new">New</span>
+              <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=500&q=75" alt="Crema Nuova" class="product-card-img" loading="lazy" />
+              <div class="product-card-actions">
+                <a href="product-detail.html" class="product-action-btn"><i class="fa fa-eye"></i></a>
+                <a href="contact.html" class="product-action-btn"><i class="fa fa-envelope"></i></a>
+                <a href="#" class="product-action-btn"><i class="fa fa-heart"></i></a>
+              </div>
+            </div>
+            <div class="product-card-info">
+              <div class="product-category-tag">Natural Stone · Floor</div>
+              <div class="product-card-name">Crema Nuova</div>
+              <div class="product-card-desc">Creamy beige limestone with elegant cross-cut finish.</div>
+              <div class="product-card-meta">
+                <div class="product-sizes"><span class="size-chip">600×600</span><span class="size-chip">900×900</span></div>
+                <a href="product-detail.html" class="product-card-link">Details <span class="arrow-right"></span></a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Pagination -->
+        <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin-top:50px;">
+          <button style="width:40px;height:40px;border:1px solid var(--beige);background:transparent;color:var(--mid-grey);font-size:0.8rem;cursor:pointer;">&larr;</button>
+          <button style="width:40px;height:40px;border:none;background:var(--gold);color:white;font-size:0.78rem;font-weight:700;">1</button>
+          <button style="width:40px;height:40px;border:1px solid var(--beige);background:transparent;color:var(--charcoal);font-size:0.78rem;cursor:pointer;">2</button>
+          <button style="width:40px;height:40px;border:1px solid var(--beige);background:transparent;color:var(--charcoal);font-size:0.78rem;cursor:pointer;">3</button>
+          <span style="color:var(--mid-grey);font-size:0.8rem;">...</span>
+          <button style="width:40px;height:40px;border:1px solid var(--beige);background:transparent;color:var(--charcoal);font-size:0.78rem;cursor:pointer;">10</button>
+          <button style="width:40px;height:40px;border:1px solid var(--beige);background:transparent;color:var(--mid-grey);font-size:0.8rem;cursor:pointer;">&rarr;</button>
+        </div>
+
+      </div><!-- /products column -->
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container-luxury">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">LUMIN<span>OS</span></div>
+        <div class="footer-brand-tagline">Premium Stone & Tile</div>
+        <p class="footer-brand-desc">25 years of crafting luxury tile collections for discerning clients across India and beyond.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-btn"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="footer-social-btn"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#" class="footer-social-btn"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="footer-social-btn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <div class="footer-links">
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="products.html" class="footer-link">Collections</a>
+          <a href="projects.html" class="footer-link">Projects</a>
+          <a href="gallery.html" class="footer-link">Gallery</a>
+          <a href="contact.html" class="footer-link">Contact Us</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Collections</div>
+        <div class="footer-links">
+          <a href="category.html" class="footer-link">Floor Tiles</a>
+          <a href="category.html" class="footer-link">Wall Tiles</a>
+          <a href="category.html" class="footer-link">Bathroom Tiles</a>
+          <a href="category.html" class="footer-link">Outdoor Tiles</a>
+          <a href="category.html" class="footer-link">Marble Look</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Newsletter</div>
+        <p style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin-bottom:14px;line-height:1.7;">New collections and design inspiration.</p>
+        <form class="footer-newsletter-input newsletter-form">
+          <input type="email" placeholder="Your email" required />
+          <button type="submit" class="footer-newsletter-btn">Go</button>
+        </form>
+        <div style="margin-top:28px;">
+          <div class="footer-col-title">Contact</div>
+          <p style="font-size:0.78rem;color:rgba(255,255,255,0.4);line-height:1.9;">
+            <i class="fa fa-phone me-2" style="color:var(--gold);"></i>+91 98765 43210<br>
+            <i class="fa fa-envelope me-2" style="color:var(--gold);"></i>hello@luminos.in
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2024 LUMINOS Premium Stone & Tile. All Rights Reserved.</div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+<button class="scroll-top" aria-label="Scroll to top"><i class="fa fa-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact LUMINOS — Visit our luxury showroom in Ahmedabad, request a tile sample, book a design consultation, or get a quote for your project." />
+  <title>Contact Us | LUMINOS Premium Stone & Tile</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Success message animation */
+    .form-success-msg {
+      display: none;
+      background: #27AE60;
+      color: white;
+      padding: 18px 24px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-align: center;
+      margin-top: 20px;
+      animation: fadeInUp 0.4s ease forwards;
+    }
+    .form-success-msg.show { display: block; }
+
+    /* Showroom hours table */
+    .hours-table { width: 100%; }
+    .hours-table td { padding: 8px 0; font-size: 0.82rem; border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .hours-table td:first-child { color: rgba(255,255,255,0.45); }
+    .hours-table td:last-child { color: var(--gold-light); font-weight: 600; text-align: right; }
+    .hours-table tr:last-child td { border-bottom: none; }
+
+    /* Map placeholder styles */
+    .map-placeholder {
+      width: 100%;
+      height: 420px;
+      background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      color: rgba(255,255,255,0.4);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* FAQ accordion */
+    .faq-item {
+      border-bottom: 1px solid var(--beige);
+    }
+    .faq-question {
+      padding: 20px 0;
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--charcoal);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      transition: color var(--t-fast);
+    }
+    .faq-question:hover { color: var(--gold); }
+    .faq-question .faq-icon {
+      width: 28px;
+      height: 28px;
+      border: 1px solid var(--beige);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.7rem;
+      color: var(--gold);
+      transition: all var(--t-fast);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      font-family: var(--font-serif);
+      font-size: 0.95rem;
+      color: var(--mid-grey);
+      line-height: 1.85;
+    }
+    .faq-item.open .faq-answer {
+      max-height: 300px;
+      padding-bottom: 20px;
+    }
+    .faq-item.open .faq-question { color: var(--gold); }
+    .faq-item.open .faq-icon { background: var(--gold); border-color: var(--gold); color: white; }
+  </style>
+</head>
+<body>
+
+<div id="preloader">
+  <div class="preloader-logo">LUMIN<span>OS</span></div>
+  <div class="preloader-bar-wrap"><div class="preloader-bar"></div></div>
+  <div class="preloader-tagline">Where Architecture Meets Art</div>
+</div>
+
+<!-- NAV -->
+<nav id="main-nav" class="nav-solid" style="background:var(--off-white);box-shadow:0 1px 0 rgba(0,0,0,0.06);">
+  <div class="nav-container">
+    <a href="index.html" class="nav-brand">
+      <span class="nav-brand-name" style="color:var(--charcoal);">LUMIN<span>OS</span></span>
+      <span class="nav-brand-sub">Premium Stone & Tile</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="nav-link" style="color:var(--charcoal);">Home</a></li>
+      <li><a href="about.html" class="nav-link" style="color:var(--charcoal);">About</a></li>
+      <li class="nav-item">
+        <a href="products.html" class="nav-link" style="color:var(--charcoal);">Collections ▾</a>
+        <div class="nav-dropdown">
+          <a href="category.html">Floor Tiles</a>
+          <a href="category.html">Wall Tiles</a>
+          <a href="category.html">Bathroom</a>
+          <a href="category.html">Outdoor</a>
+          <a href="category.html">Marble Look</a>
+        </div>
+      </li>
+      <li><a href="projects.html" class="nav-link" style="color:var(--charcoal);">Projects</a></li>
+      <li><a href="gallery.html" class="nav-link" style="color:var(--charcoal);">Gallery</a></li>
+      <li><a href="blog.html" class="nav-link" style="color:var(--charcoal);">Blog</a></li>
+      <li><a href="contact.html" class="nav-link active" style="color:var(--charcoal);">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="contact.html" class="btn-nav-cta">Get a Quote</a>
+      <div class="nav-hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</nav>
+<div class="nav-mobile-overlay"></div>
+<div class="nav-mobile">
+  <button class="nav-mobile-close"><i class="fa fa-times"></i></button>
+  <div style="margin-bottom:16px;"><span style="font-family:var(--font-display);font-size:1.5rem;color:#fff;">LUMIN<span style="color:var(--gold);">OS</span></span></div>
+  <a href="index.html" class="nav-mobile-link">Home</a>
+  <a href="products.html" class="nav-mobile-link">Collections</a>
+  <a href="gallery.html" class="nav-mobile-link">Gallery</a>
+  <a href="contact.html" class="nav-mobile-link">Contact</a>
+</div>
+
+<!-- PAGE HERO — minimal -->
+<section style="background:var(--near-black);padding:160px 0 70px;position:relative;overflow:hidden;">
+  <div style="position:absolute;inset:0;opacity:0.15;">
+    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1400&q=70" alt="" style="width:100%;height:100%;object-fit:cover;" />
+  </div>
+  <div class="container-luxury" style="position:relative;z-index:2;">
+    <div style="text-align:center;">
+      <div class="section-eyebrow" style="justify-content:center;color:var(--gold-light);">
+        <i class="fa fa-phone"></i> We'd Love to Hear from You
+      </div>
+      <h1 style="font-family:var(--font-display);font-size:clamp(2.2rem,5vw,4rem);font-weight:500;color:white;margin-bottom:14px;">Get in <em style="font-style:italic;color:var(--gold-light);">Touch</em></h1>
+      <div class="breadcrumb-luxury">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep">/</span>
+        <span>Contact Us</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK CONTACT STRIP -->
+<div style="background:var(--gold);padding:0;">
+  <div class="container-luxury">
+    <div style="display:flex;justify-content:center;gap:0;flex-wrap:wrap;">
+      <a href="tel:+919876543210" style="display:flex;align-items:center;gap:12px;padding:18px 40px;color:white;border-right:1px solid rgba(255,255,255,0.2);">
+        <i class="fa fa-phone" style="font-size:1rem;"></i>
+        <div>
+          <div style="font-size:0.58rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;opacity:0.8;">Call Us</div>
+          <div style="font-size:0.9rem;font-weight:700;">+91 98765 43210</div>
+        </div>
+      </a>
+      <a href="mailto:hello@luminos.in" style="display:flex;align-items:center;gap:12px;padding:18px 40px;color:white;border-right:1px solid rgba(255,255,255,0.2);">
+        <i class="fa fa-envelope" style="font-size:1rem;"></i>
+        <div>
+          <div style="font-size:0.58rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;opacity:0.8;">Email Us</div>
+          <div style="font-size:0.9rem;font-weight:700;">hello@luminos.in</div>
+        </div>
+      </a>
+      <a href="https://wa.me/919876543210" target="_blank" rel="noopener" style="display:flex;align-items:center;gap:12px;padding:18px 40px;color:white;">
+        <i class="fab fa-whatsapp" style="font-size:1rem;"></i>
+        <div>
+          <div style="font-size:0.58rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;opacity:0.8;">WhatsApp</div>
+          <div style="font-size:0.9rem;font-weight:700;">Chat Instantly</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================
+     MAIN CONTACT SECTION
+     ============================================================ -->
+<section class="section bg-off-white">
+  <div class="container-luxury">
+    <div class="contact-form-grid">
+
+      <!-- LEFT: Contact Information -->
+      <div data-reveal="fade-right">
+        <div class="section-eyebrow">Reach Us</div>
+        <h2 class="section-title">Let's Start a <em>Conversation</em></h2>
+        <div class="divider-gold"></div>
+        <p class="section-subtitle mb-5">
+          Whether you're planning a new project, looking for design inspiration, or want to request samples —
+          our team is here to help you every step of the way.
+        </p>
+
+        <!-- Contact Items -->
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fa fa-location-dot"></i></div>
+          <div>
+            <div class="contact-info-label">Our Showroom</div>
+            <div class="contact-info-value">
+              12, Marble Street, Design District,<br />
+              Ahmedabad, Gujarat — 380001<br />
+              <span style="font-size:0.75rem;color:var(--mid-grey);">Near Satellite Road, Opp. Design Plaza</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fa fa-phone"></i></div>
+          <div>
+            <div class="contact-info-label">Phone & WhatsApp</div>
+            <div class="contact-info-value">
+              +91 98765 43210<br />
+              +91 79 – 2345 6789 (Office)
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fa fa-envelope"></i></div>
+          <div>
+            <div class="contact-info-label">Email</div>
+            <div class="contact-info-value">
+              hello@luminos.in<br />
+              projects@luminos.in (B2B)
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-info-item">
+          <div class="contact-info-icon"><i class="fa fa-clock"></i></div>
+          <div>
+            <div class="contact-info-label">Showroom Hours</div>
+            <div class="contact-info-value">
+              Monday – Saturday: 10:00 AM – 7:00 PM<br />
+              Sunday: 11:00 AM – 5:00 PM<br />
+              <span style="font-size:0.75rem;color:var(--mid-grey);">* Private appointments available outside hours</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div style="margin-top:40px;">
+          <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;">Follow Us</div>
+          <div style="display:flex;gap:12px;">
+            <a href="#" style="width:44px;height:44px;border:1px solid var(--beige);display:flex;align-items:center;justify-content:center;color:var(--charcoal);font-size:0.9rem;transition:all 0.2s;" onmouseover="this.style.background='var(--gold)';this.style.borderColor='var(--gold)';this.style.color='white';" onmouseout="this.style.background='';this.style.borderColor='var(--beige)';this.style.color='var(--charcoal)';" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" style="width:44px;height:44px;border:1px solid var(--beige);display:flex;align-items:center;justify-content:center;color:var(--charcoal);font-size:0.9rem;transition:all 0.2s;" onmouseover="this.style.background='var(--gold)';this.style.borderColor='var(--gold)';this.style.color='white';" onmouseout="this.style.background='';this.style.borderColor='var(--beige)';this.style.color='var(--charcoal)';" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#" style="width:44px;height:44px;border:1px solid var(--beige);display:flex;align-items:center;justify-content:center;color:var(--charcoal);font-size:0.9rem;transition:all 0.2s;" onmouseover="this.style.background='var(--gold)';this.style.borderColor='var(--gold)';this.style.color='white';" onmouseout="this.style.background='';this.style.borderColor='var(--beige)';this.style.color='var(--charcoal)';" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" style="width:44px;height:44px;border:1px solid var(--beige);display:flex;align-items:center;justify-content:center;color:var(--charcoal);font-size:0.9rem;transition:all 0.2s;" onmouseover="this.style.background='var(--gold)';this.style.borderColor='var(--gold)';this.style.color='white';" onmouseout="this.style.background='';this.style.borderColor='var(--beige)';this.style.color='var(--charcoal)';" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" style="width:44px;height:44px;border:1px solid var(--beige);display:flex;align-items:center;justify-content:center;color:var(--charcoal);font-size:0.9rem;transition:all 0.2s;" onmouseover="this.style.background='var(--gold)';this.style.borderColor='var(--gold)';this.style.color='white';" onmouseout="this.style.background='';this.style.borderColor='var(--beige)';this.style.color='var(--charcoal)';" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Inquiry Form -->
+      <div data-reveal="fade-left" data-delay="200">
+        <div style="background:var(--white);padding:52px;box-shadow:var(--shadow-md);border-top:3px solid var(--gold);">
+
+          <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:500;color:var(--charcoal);margin-bottom:6px;">Send an Enquiry</div>
+          <p style="font-size:0.78rem;color:var(--mid-grey);margin-bottom:32px;line-height:1.7;">Fill in the details below and our team will respond within 24 hours.</p>
+
+          <form class="form-luxury" id="contact-form" novalidate>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="fname">First Name *</label>
+                <input type="text" class="form-control" id="fname" name="fname" placeholder="e.g. Rahul" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="lname">Last Name *</label>
+                <input type="text" class="form-control" id="lname" name="lname" placeholder="e.g. Shah" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="email">Email Address *</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="hello@example.com" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="phone">Phone / WhatsApp</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="+91 98765 43210" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="inquiry-type">I Am A *</label>
+              <select class="form-control form-select-custom" id="inquiry-type" name="inquiry_type" required>
+                <option value="" disabled selected>Select your role</option>
+                <option>Homeowner</option>
+                <option>Interior Designer</option>
+                <option>Architect</option>
+                <option>Builder / Contractor</option>
+                <option>Developer</option>
+                <option>Dealer / Distributor</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" for="collection">Interested Collection</label>
+                <select class="form-control form-select-custom" id="collection" name="collection">
+                  <option value="" disabled selected>Select collection</option>
+                  <option>Floor Tiles</option>
+                  <option>Wall Tiles</option>
+                  <option>Bathroom Tiles</option>
+                  <option>Outdoor Tiles</option>
+                  <option>Marble Look</option>
+                  <option>Ceramic Art</option>
+                  <option>Not Sure — Need Guidance</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="area">Estimated Area (sqft)</label>
+                <input type="text" class="form-control" id="area" name="area" placeholder="e.g. 2500" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="city">City / Location *</label>
+              <input type="text" class="form-control" id="city" name="city" placeholder="e.g. Mumbai, Maharashtra" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message">Your Message *</label>
+              <textarea class="form-control" id="message" name="message" rows="5" placeholder="Tell us about your project — size, space type, preferred finishes, timeline, etc." required></textarea>
+            </div>
+
+            <!-- Checkboxes -->
+            <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:28px;">
+              <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:0.78rem;color:var(--charcoal);">
+                <input type="checkbox" style="width:16px;height:16px;accent-color:var(--gold);margin-top:2px;flex-shrink:0;" checked />
+                <span>I'd like to receive updates on new collections, design trends and exclusive offers.</span>
+              </label>
+              <label style="display:flex;align-items:flex-start;gap:12px;cursor:pointer;font-size:0.78rem;color:var(--charcoal);">
+                <input type="checkbox" style="width:16px;height:16px;accent-color:var(--gold);margin-top:2px;flex-shrink:0;" />
+                <span>I'd also like to request a <strong>free tile sample</strong> for my project.</span>
+              </label>
+            </div>
+
+            <button type="submit" class="btn-luxury btn-gold" style="width:100%;justify-content:center;font-size:0.72rem;padding:18px;">
+              Send Enquiry &amp; Request Sample
+              <span class="arrow-right"></span>
+            </button>
+
+            <div class="form-success-msg" id="success-msg">
+              <i class="fa fa-circle-check me-2"></i>
+              Thank you! We've received your enquiry and will respond within 24 hours.
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+    </div><!-- /contact-form-grid -->
+  </div>
+</section>
+
+<!-- ============================================================
+     GOOGLE MAP + SHOWROOM INFO
+     ============================================================ -->
+<section class="section-sm bg-near-black">
+  <div class="container-luxury">
+    <div class="row g-5 align-items-start">
+
+      <!-- Map -->
+      <div class="col-lg-8" data-reveal="fade-right">
+        <div style="font-family:var(--font-sans);font-size:0.62rem;font-weight:800;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;">Find Us</div>
+        <!-- Google Maps embed -->
+        <div class="map-container" style="filter:grayscale(20%) contrast(1.1) brightness(0.85);">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3672.3432905830576!2d72.52471271492888!3d23.013457884947254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e84faa6cb03cd%3A0x2d0123a39588ca6e!2sSatellite%2C%20Ahmedabad%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1703000000000!5m2!1sen!2sin"
+            width="100%"
+            height="420"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="LUMINOS Showroom Location"
+          ></iframe>
+        </div>
+        <div style="margin-top:14px;display:flex;gap:14px;flex-wrap:wrap;">
+          <a href="https://maps.google.com/?q=Satellite,Ahmedabad,Gujarat" target="_blank" rel="noopener" class="btn-luxury btn-gold" style="font-size:0.62rem;padding:12px 22px;">
+            <i class="fa fa-directions me-2"></i>Get Directions
+          </a>
+          <a href="https://maps.google.com/?q=Satellite,Ahmedabad,Gujarat" target="_blank" rel="noopener" class="btn-luxury btn-outline-white" style="font-size:0.62rem;padding:12px 22px;">
+            <i class="fa fa-map-pin me-2"></i>Open in Google Maps
+          </a>
+        </div>
+      </div>
+
+      <!-- Showroom Info Card -->
+      <div class="col-lg-4" data-reveal="fade-left" data-delay="200">
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.08);padding:40px;">
+
+          <div style="font-family:var(--font-display);font-size:1.4rem;color:white;margin-bottom:6px;">Luminos Showroom</div>
+          <div style="font-size:0.62rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;">Experience Centre</div>
+
+          <div style="font-size:0.78rem;color:rgba(255,255,255,0.5);line-height:1.9;margin-bottom:24px;">
+            <i class="fa fa-location-dot me-2" style="color:var(--gold);"></i>
+            12, Marble Street, Design District,<br>
+            <span style="padding-left:20px;">Ahmedabad, Gujarat 380001</span>
+          </div>
+
+          <div style="font-family:var(--font-sans);font-size:0.6rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;">Showroom Hours</div>
+          <table class="hours-table">
+            <tr><td>Monday – Friday</td><td>10:00 – 19:00</td></tr>
+            <tr><td>Saturday</td><td>10:00 – 19:00</td></tr>
+            <tr><td>Sunday</td><td>11:00 – 17:00</td></tr>
+            <tr><td>National Holidays</td><td style="color:var(--mid-grey);">Closed</td></tr>
+          </table>
+
+          <div style="margin-top:24px;padding:16px;background:rgba(196,151,60,0.1);border-left:3px solid var(--gold);">
+            <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-light);margin-bottom:6px;">
+              <i class="fa fa-calendar me-2"></i>Private Viewing
+            </div>
+            <p style="font-size:0.75rem;color:rgba(255,255,255,0.45);line-height:1.7;margin:0;">
+              For exclusive out-of-hours showroom visits, call us or WhatsApp to arrange a private appointment.
+            </p>
+          </div>
+
+          <a href="tel:+919876543210" style="display:flex;align-items:center;gap:12px;margin-top:24px;padding:14px 18px;background:var(--gold);color:white;font-size:0.7rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;transition:background 0.2s;" onmouseover="this.style.background='var(--gold-dark)'" onmouseout="this.style.background='var(--gold)'">
+            <i class="fa fa-phone"></i>
+            Call +91 98765 43210
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     FAQ SECTION
+     ============================================================ -->
+<section class="section bg-cream">
+  <div class="container-luxury">
+    <div class="row g-5">
+      <div class="col-lg-4" data-reveal="fade-right">
+        <div class="section-eyebrow">Common Questions</div>
+        <h2 class="section-title">Frequently <em>Asked</em></h2>
+        <div class="divider-gold"></div>
+        <p class="section-subtitle">Can't find your answer? Our design team is just a call or WhatsApp away.</p>
+        <div style="margin-top:28px;">
+          <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="btn-luxury btn-gold">
+            <i class="fab fa-whatsapp me-2"></i>Ask on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="col-lg-8" data-reveal="fade-left" data-delay="200">
+
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-question">
+            Do you provide free tile samples?
+            <div class="faq-icon"><i class="fa fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            Yes! We provide free physical tile samples for all our collections. You can request up to 3 samples per inquiry, delivered to your address anywhere in India within 5–7 working days. Simply fill in the contact form or WhatsApp us with your chosen tiles.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-question">
+            What are your minimum order quantities?
+            <div class="faq-icon"><i class="fa fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            For retail clients, we supply from as few as 5 boxes (approximately 10 sqm). For commercial and builder clients, we offer better pricing on orders of 500 sqm and above. Contact our B2B team at projects@luminos.in for bulk pricing.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-question">
+            Do you ship across India? What about export?
+            <div class="faq-icon"><i class="fa fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            We deliver to all major cities and towns across India via our logistics partners. We also export to 40+ countries — including UAE, UK, USA, Singapore, and East Africa. International shipping is available for orders of 1000 sqm and above.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-question">
+            Can I visit the showroom without an appointment?
+            <div class="faq-icon"><i class="fa fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            Absolutely! Our showroom is open during listed hours and walk-in visitors are always welcome. For a more personalized experience with a dedicated design consultant and private viewing of exclusive collections, we recommend booking a consultation in advance.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-question">
+            Do you provide installation services?
+            <div class="faq-icon"><i class="fa fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            While we don't directly provide installation, we maintain a curated network of certified tile installation professionals across major cities. Upon purchase, we can connect you with a vetted installer in your area, and provide detailed installation guidelines at no extra cost.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-question">
+            What warranty do your tiles come with?
+            <div class="faq-icon"><i class="fa fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            All LUMINOS tiles come with a manufacturer's warranty against defects in material and finish. Porcelain and vitrified tiles carry a 10-year warranty; natural stone tiles carry a 5-year warranty. Our customer service team handles all warranty claims with priority resolution.
+          </div>
+        </div>
+
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-question">
+            Can you create custom tile designs for my project?
+            <div class="faq-icon"><i class="fa fa-plus"></i></div>
+          </div>
+          <div class="faq-answer">
+            Yes, for commercial and high-end residential projects, we offer custom design and manufacturing services. This includes bespoke sizes, custom colour glazes, and personalised patterns. Custom orders typically have a minimum of 500 sqm and a 8–12 week lead time. Contact our design team to discuss.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container-luxury">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">LUMIN<span>OS</span></div>
+        <div class="footer-brand-tagline">Premium Stone & Tile</div>
+        <p class="footer-brand-desc">For over 25 years, LUMINOS has been the preferred choice of architects, interior designers, and discerning homeowners across India and beyond.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="footer-social-btn" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+          <a href="#" class="footer-social-btn" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="footer-social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="footer-social-btn" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <div class="footer-links">
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="about.html" class="footer-link">About Us</a>
+          <a href="products.html" class="footer-link">Collections</a>
+          <a href="projects.html" class="footer-link">Projects</a>
+          <a href="gallery.html" class="footer-link">Gallery</a>
+          <a href="blog.html" class="footer-link">Blog</a>
+          <a href="testimonials.html" class="footer-link">Testimonials</a>
+          <a href="contact.html" class="footer-link">Contact Us</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Collections</div>
+        <div class="footer-links">
+          <a href="category.html" class="footer-link">Floor Tiles</a>
+          <a href="category.html" class="footer-link">Wall Tiles</a>
+          <a href="category.html" class="footer-link">Bathroom Tiles</a>
+          <a href="category.html" class="footer-link">Outdoor Tiles</a>
+          <a href="category.html" class="footer-link">Marble Look</a>
+          <a href="category.html" class="footer-link">Ceramic Art</a>
+          <a href="category.html" class="footer-link">Porcelain</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-col-title">Newsletter</div>
+        <p style="font-size:0.78rem;color:rgba(255,255,255,0.4);margin-bottom:14px;line-height:1.7;">Subscribe for design inspiration, new collections and exclusive offers.</p>
+        <form class="footer-newsletter-input newsletter-form" autocomplete="off">
+          <input type="email" placeholder="Your email address" required />
+          <button class="footer-newsletter-btn" type="submit">Go</button>
+        </form>
+        <div style="margin-top:28px;">
+          <div class="footer-col-title">Showroom</div>
+          <p style="font-size:0.78rem;color:rgba(255,255,255,0.4);line-height:1.9;">
+            <i class="fa fa-location-dot me-2" style="color:var(--gold);"></i>12, Marble Street, Ahmedabad 380001<br>
+            <i class="fa fa-phone me-2" style="color:var(--gold);"></i>+91 98765 43210<br>
+            <i class="fa fa-envelope me-2" style="color:var(--gold);"></i>hello@luminos.in
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2024 LUMINOS Premium Stone & Tile. All Rights Reserved.</div>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/919876543210?text=Hello%20LUMINOS%2C%20I%27m%20interested%20in%20your%20tile%20collections."
+   class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+<button class="scroll-top" aria-label="Scroll to top"><i class="fa fa-arrow-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+  // Contact form enhanced submit handler
+  (function () {
+    var form = document.getElementById('contact-form');
+    var successMsg = document.getElementById('success-msg');
+    if (!form) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var valid = true;
+      var required = form.querySelectorAll('[required]');
+      required.forEach(function (field) {
+        if (!field.value.trim()) {
+          field.style.borderBottomColor = '#C0392B';
+          valid = false;
+        } else {
+          field.style.borderBottomColor = '';
+        }
+      });
+      if (valid) {
+        var btn = form.querySelector('[type="submit"]');
+        btn.disabled = true;
+        btn.innerHTML = '<i class="fa fa-spinner fa-spin me-2"></i>Sending...';
+        setTimeout(function () {
+          btn.innerHTML = '<i class="fa fa-circle-check me-2"></i>Enquiry Sent!';
+          btn.style.background = '#27AE60';
+          if (successMsg) successMsg.classList.add('show');
+          setTimeout(function () {
+            form.reset();
+            btn.disabled = false;
+            btn.innerHTML = 'Send Enquiry &amp; Request Sample <span class="arrow-right"></span>';
+            btn.style.background = '';
+            if (successMsg) successMsg.classList.remove('show');
+          }, 5000);
+        }, 1500);
+      }
+    });
+  })();
+</script>
+</body>
+</html>
